@@ -1,0 +1,7 @@
+{
+    "editor.formatOnSave": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.requireConfig": true,
+    "prettier.trailingComma": "es5",
+    "prettier.singleQuote": true
+}

@@ -7,7 +7,8 @@ export const reducer = (state, action) => {
               ...item,
               price: action.price,
               pristine: action.price ? false : true,
-              valid: !action.price || Number.isInteger(parseFloat(action.price))
+              valid:
+                !action.price || Number.isInteger(parseFloat(action.price)),
             }
           : item
       );
@@ -18,20 +19,20 @@ export const reducer = (state, action) => {
 };
 
 export const actions = {
-  UpdatePrice: "update price"
+  UpdatePrice: 'update price',
 };
 
-const aBigList = Array(5)
+const aBigList = Array(2000)
   .fill(null)
   .map((_item, idx) => ({
     id: `id${idx}`,
-    name: `Thing #${idx}`
+    name: `Thing #${idx}`,
   }));
 
 export const initialState = {
   bigList: aBigList.map(thing => ({
     pristine: true,
     valid: true,
-    ...thing
-  }))
+    ...thing,
+  })),
 };
