@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 
 import './styles.css';
 import styled from 'styled-components';
-import { initialState } from './reducer';
 import { FormStateProvider } from './state';
 import MyInput from './MyInput';
 import SpySpan from './SpySpan';
@@ -20,6 +19,22 @@ const Row = styled.div`
     line-height: 30px;
   }
 `;
+
+const aBigList = Array(5)
+  .fill(null)
+  .map((_item, idx) => ({
+    id: `id${idx}`,
+    name: `Thing #${idx}`,
+  }));
+
+export const initialState = aBigList.reduce((valueObject, item) => {
+  valueObject[item.id] = {
+    ...item,
+    pristine: true,
+    valid: true,
+  };
+  return valueObject;
+}, {});
 
 function App() {
   return (

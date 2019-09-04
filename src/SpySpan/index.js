@@ -6,6 +6,6 @@ export default function SpySpan({ fieldToSpy: id }) {
   const spiedItem = appContextValue[id];
 
   return useMemo(() => {
-    return <span>{spiedItem.pristine ? 'Yes' : 'No'}</span>;
+    return <span>Pristine? {spiedItem.pristine ? 'Yes' : 'No'}</span>;
   }, [spiedItem]);
 }
