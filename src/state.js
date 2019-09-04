@@ -1,12 +1,12 @@
-import React, { createContext, useContext, useReducer } from "react";
-import { reducer } from "./reducer";
+import React, { createContext, useContext, useReducer } from 'react';
+import { reducer } from './reducer';
 
-export const DumplingContext = createContext();
+export const FormContext = createContext();
 
-export const AppStateProvider = ({ initialState, children }) => (
-  <DumplingContext.Provider value={useReducer(reducer, initialState)}>
+export const FormStateProvider = ({ initialState, children }) => (
+  <FormContext.Provider value={useReducer(reducer, initialState)}>
     {children}
-  </DumplingContext.Provider>
+  </FormContext.Provider>
 );
 
-export const useAppState = () => useContext(DumplingContext);
+export const useAppState = () => useContext(FormContext);
